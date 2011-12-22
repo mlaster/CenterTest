@@ -22,7 +22,6 @@
     [super viewDidLoad];
     [self.button setTitle:@"Dynamic title contents" forState:UIControlStateNormal];
     [self.button sizeToFit];
-    self.button.center = self.button.superview.center;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -35,6 +34,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSLog(@"superview: %@", self.button.superview);
+    NSLog(@"superview.width: %f", self.button.superview.frame.size.width);
+    NSLog(@"superview.height: %f", self.button.superview.frame.size.height);
+    self.button.center = self.button.superview.center;
     [super viewWillAppear:animated];
 }
 
